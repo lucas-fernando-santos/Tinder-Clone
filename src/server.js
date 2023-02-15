@@ -3,12 +3,10 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 
 const server = express();
-mongoose.connect(
-  "mongodb+srv://semana:semana@cluster0.bofswhl.mongodb.net/?retryWrites=true&w=majority",
-  {
-    useNewUrlParser: true,
-  }
-);
+mongoose.connect("mongodb://localhost:27017/tinder", {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+});
 
 server.use(express.json());
 server.use(routes);
